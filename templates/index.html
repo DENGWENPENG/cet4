@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src={{vuejs}}></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href={{cssurl}}>
+    <title>四级单词大全</title>
+</head>
+{% raw %}
+
+<body>
+    <div id="app">
+        <div class="wrapper">
+            <div class="choose">
+                <el-button @click="drawer = true" type="primary" style="margin-left: 50%;">
+                    <el-drawer :visible.sync="drawer" :direction="direction" :show-close="false" size='30%'>
+                        <div class="drawer_wrapper">
+                            <el-row>
+                                <el-col :span="2" v-for="(item,index) in choice" :key="index">
+                                    <div class="alph" @click="chosen(index)" id="alph">
+                                        <div class="one_alph" :id="forId(index)">
+                                            {{item}}
+                                        </div>
+                                    </div>
+                                </el-col>
+                            </el-row>
+                        </div>
+
+                    </el-drawer>
+            </div>
+            <div class="words">
+                <div class="one_alph" v-for="item in chosen_alph">
+                    <el-backtop target=".one_alph"></el-backtop>
+                    <el-row>
+                        <div class="all_word" v-for="i in check(item)">
+                            <el-col :span="3">
+                                <el-card shadow="hover" :body-style="{ padding: '10px' }">
+                                    <div class="text" :id="i" @click="click_word(i)">{{i}}</div>
+                                </el-card>
+                            </el-col>
+                        </div>
+                    </el-row>
+                    <el-divider><span>END</span></el-divider>
+                </div>
+
+            </div>
+            <div class="ss" style="height: 250px;"></div>
+            <div class="mean" v-if="show">
+                <div class="clear" ><el-button type="danger" icon="el-icon-delete" circle @click="clear"></el-button></div>
+                <div class="word_text">{{show_data}}</div>
+                <div class="yin one_mean">{{yin}}</div>
+                <div class="mean_wrapper" v-for="item in mean">
+                    <el-row>
+                        <el-col :span="12" class="one_mean">{{item}}</el-col>
+                    </el-row>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    {% endraw %}
+    <script src={{jsurl}}></script>
+</body>
+
+</html>

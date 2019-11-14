@@ -1,0 +1,59 @@
+.drawer_wrapper{
+    width: 100%;
+}
+.alph{
+    text-align: center;
+    font-weight: bolder;
+    color: blueviolet;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.el-drawer__header{
+    padding: 0;
+}
+
+.words{
+    margin: 10px;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+.text{
+    height: 37px;
+    color: blueviolet;
+    font-size: 20px;
+    overflow: visible;
+    margin-top: 17px;
+}
+.one_alph{
+    margin-bottom: 20px;
+}
+.mean{
+    position:fixed; 
+    left:0px; 
+    bottom:0px; 
+    width:100%; 
+    height: 200px;
+    overflow: auto;
+    background: white;
+    z-index:9999;
+}
+.word_text{
+    margin-top:20px;
+    margin-left:30px;
+    color: blueviolet;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.one_mean{
+    margin-left:40px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.clear{
+    float: right;
+    margin-right: 100px;
+    margin-top: 20px;
+}
