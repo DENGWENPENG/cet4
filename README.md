@@ -5,7 +5,7 @@
 1. `git git@github.com:DENGWENPENG/cet4.git`
 2. `cd cet4 `
 3. `virtualenv venv `
-4. `cd venv\Scripts\activate`
+4. `cd venv\Scripts\  && activate`
 5. `pip install -r requirements.txt `
 6. `python app.py `
 
